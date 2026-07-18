@@ -18,12 +18,13 @@ const server = http.createServer((req, res) => {
       break;
   }
 
-  fs.readFile(pagePath, (err, data) => {
+  fs.readFile(pagePath, "utf8", (err, data) => {
     if (err) {
       console.log(err);
       res.end("not found");
     }
 
+    console.log(data);
     res.end(data);
   })
 })

@@ -1,0 +1,25 @@
+{
+  "name": "basic-informational-site-top",
+  "version": "1.0.0",
+  "description": "A basic introduction to using NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tou1lle/basic-informational-site-top.git"
+  },
+  "keywords": [],
+  "author": "Tuan Ha <hatuan@email.cz>",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Tou1lle/basic-informational-site-top/issues"
+  },
+  "homepage": "https://github.com/Tou1lle/basic-informational-site-top#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
