@@ -6,33 +6,18 @@ app.listen(3001, () => {
   console.log("Express app started");
 })
 
-const sendPage = (res, fileName, found = true) => {
-  fs.readFile(fileName, "utf8", (err, data) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send("Server Error");
-    }
-
-    if (!found) {
-      res.status(404).send(data);
-      return false;
-    }
-    res.send(data);
-  })
-}
-
 app.get("/", (req, res) => {
-  sendPage(res, "index.html");
+  res.sendFile("./index.html", { root: __dirname });
 });
 
 app.get("/about", (req, res) => {
-  sendPage(res, "about.html");
+  res.sendFile("./about.html", { root: __dirname });
 });
 
 app.get("/contact-me", (req, res) => {
-  sendPage(res, "contact-me.html");
+  res.sendFile("./contact-me.html", { root: __dirname });
 });
 
 app.use((req, res) => {
-  sendPage(res, "404.html", false);
+  res.status(404).sendFile("./404.html", { root: __dirname });
 });
